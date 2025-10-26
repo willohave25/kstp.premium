@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KSTP PREMIUM - Service de chauffeur privé haut de gamme à Reims. Transferts VTC, entreprise, circuits vignobles champagne. Confort, élégance et professionnalisme.">
+    <meta name="keywords" content="VTC Reims, chauffeur privé, transfert aéroport, circuit champagne, limousine, service premium">
+    <title>KSTP PREMIUM | Chauffeur Privé Haut de Gamme - Reims</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Art Déco style -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33743688399" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="ks-removebg-preview.png" alt="KSTP Premium Logo">
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#flotte">Nos Véhicules</a></li>
+                <li><a href="#vignobles">Vignobles</a></li>
+                <li><a href="#reservation">Réservation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:0339912014" class="nav-phone">
+                    <i class="fas fa-phone"></i> 03 39 91 20 14
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="art-deco-border"></div>
+                <img src="ks-removebg-preview.png" alt="KSTP Premium" class="hero-logo fade-in">
+                <h1 class="hero-title fade-in-up">L'Excellence du Transport Premium</h1>
+                <p class="hero-subtitle fade-in-up delay-1">Votre chauffeur privé haut de gamme à Reims et partout en France</p>
+                <div class="hero-cta fade-in-up delay-2">
+                    <a href="#reservation" class="btn btn-primary">
+                        <span>Réserver Maintenant</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/33743688399" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                <div class="art-deco-border bottom"></div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Découvrir</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- À Propos -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="deco-line"></div>
+                <h2 class="section-title">À Propos de KSTP PREMIUM</h2>
+                <div class="deco-line"></div>
+            </div>
+            <div class="about-content">
+                <p class="lead">KSTP PREMIUM est votre service de chauffeur privé haut de gamme pour tous vos déplacements en France et à l'international.</p>
+                <div class="about-grid">
+                    <div class="about-item">
+                        <i class="fas fa-award"></i>
+                        <h3>Excellence</h3>
+                        <p>Nous allions confort, élégance et professionnalisme pour une expérience de voyage d'exception.</p>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Expertise</h3>
+                        <p>Nos chauffeurs agréés sont de véritables experts locaux qui s'adaptent à vos besoins.</p>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Fiabilité</h3>
+                        <p>Sécurité, discrétion et ponctualité sont nos maîtres-mots.</p>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Transparence</h3>
+                        <p>Notre politique tarifaire transparente garantit l'absence de frais cachés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="deco-line"></div>
+                <h2 class="section-title">Nos Services Premium</h2>
+                <div class="deco-line"></div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service VTC -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Service VTC</h3>
+                        <p>Transferts professionnels vers gares, aéroports et destinations de votre choix. Disponibilité 24/7 avec suivi en temps réel.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Transfert aéroport</li>
+                            <li><i class="fas fa-check"></i> Gares et destinations</li>
+                            <li><i class="fas fa-check"></i> Disponibilité 24/7</li>
+                            <li><i class="fas fa-check"></i> Suivi en temps réel</li>
+                        </ul>
+                        <a href="#reservation" class="service-btn">
+                            Réserver <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Entreprise -->
+                <div class="service-card featured">
+                    <div class="featured-badge">PREMIUM</div>
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Service Entreprise</h3>
+                        <p>Solutions de transport dédiées aux professionnels. Déplacements d'affaires, séminaires, événements corporates avec discrétion garantie.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Déplacements d'affaires</li>
+                            <li><i class="fas fa-check"></i> Séminaires</li>
+                            <li><i class="fas fa-check"></i> Événements corporates</li>
+                            <li><i class="fas fa-check"></i> Discrétion absolue</li>
+                        </ul>
+                        <a href="#reservation" class="service-btn">
+                            Réserver <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Circuit Vignobles -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Circuit Vignobles Champagne</h3>
+                        <p>Découvrez les trésors viticoles de la Marne avec nos circuits personnalisés. Visites de caves, dégustations et routes touristiques.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Circuits personnalisés</li>
+                            <li><i class="fas fa-check"></i> Visites de caves</li>
+                            <li><i class="fas fa-check"></i> Dégustations</li>
+                            <li><i class="fas fa-check"></i> Confort premium</li>
+                        </ul>
+                        <a href="#vignobles" class="service-btn">
+                            Découvrir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Événements -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Événements Spéciaux</h3>
+                        <p>Pour vos moments uniques : mariages, soirées de gala, anniversaires. Service limousine disponible pour un prestige absolu.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Mariages</li>
+                            <li><i class="fas fa-check"></i> Soirées de gala</li>
+                            <li><i class="fas fa-check"></i> Anniversaires</li>
+                            <li><i class="fas fa-check"></i> Service limousine</li>
+                        </ul>
+                        <a href="#reservation" class="service-btn">
+                            Réserver <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flotte Section -->
+    <section id="flotte" class="fleet-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="deco-line"></div>
+                <h2 class="section-title">Notre Flotte Premium</h2>
+                <p class="section-subtitle">Des véhicules soigneusement sélectionnés pour votre confort</p>
+                <div class="deco-line"></div>
+            </div>
+
+            <div class="fleet-grid">
+                <!-- Berline Premium -->
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <img src="mercedes.png" alt="Berline Premium Mercedes Classe S" loading="lazy">
+                        <div class="fleet-overlay">
+                            <a href="#reservation" class="fleet-btn">Demander un devis</a>
+                            <a href="https://wa.me/33743688399" class="fleet-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fleet-content">
+                        <span class="fleet-badge">BERLINE PREMIUM</span>
+                        <h3>Classe S ou équivalent</h3>
+                        <p>Le summum du confort et de l'élégance pour vos déplacements professionnels.</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Confort optimal</li>
+                            <li><i class="fas fa-check"></i> Déplacements business</li>
+                            <li><i class="fas fa-check"></i> Transferts aéroport</li>
+                            <li><i class="fas fa-check"></i> Climatisation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SUV Premium -->
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <img src="tuckson.png" alt="SUV Premium Hyundai Tucson" loading="lazy">
+                        <div class="fleet-overlay">
+                            <a href="#reservation" class="fleet-btn">Demander un devis</a>
+                            <a href="https://wa.me/33743688399" class="fleet-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fleet-content">
+                        <span class="fleet-badge">SUV PREMIUM</span>
+                        <h3>SUV Luxe ou équivalent</h3>
+                        <p>Espace maximal et confort absolu pour vos longs trajets.</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Espace maximal</li>
+                            <li><i class="fas fa-check"></i> Longs trajets</li>
+                            <li><i class="fas fa-check"></i> Bagages volumineux</li>
+                            <li><i class="fas fa-check"></i> 4x4 disponible</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Van Premium -->
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <img src="van.png" alt="Van Premium Mercedes 5-7 places" loading="lazy">
+                        <div class="fleet-overlay">
+                            <a href="#reservation" class="fleet-btn">Demander un devis</a>
+                            <a href="https://wa.me/33743688399" class="fleet-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fleet-content">
+                        <span class="fleet-badge">VAN PREMIUM</span>
+                        <h3>Van 5-7 places</h3>
+                        <p>Parfait pour les groupes et familles avec bagages volumineux.</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Groupes 5-7 personnes</li>
+                            <li><i class="fas fa-check"></i> Familles</li>
+                            <li><i class="fas fa-check"></i> Bagages volume</li>
+                            <li><i class="fas fa-check"></i> Confort spacieux</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Limousine -->
+                <div class="fleet-card featured">
+                    <div class="fleet-image">
+                        <img src="limousine.png" alt="Limousine Service Premium" loading="lazy">
+                        <div class="fleet-overlay">
+                            <a href="#reservation" class="fleet-btn">Demander un devis</a>
+                            <a href="https://wa.me/33743688399" class="fleet-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fleet-content">
+                        <span class="fleet-badge gold">LIMOUSINE SERVICE</span>
+                        <h3>Événements Spéciaux</h3>
+                        <p>Pour vos moments exceptionnels, un prestige absolu.</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Mariages</li>
+                            <li><i class="fas fa-check"></i> Soirées prestigieuses</li>
+                            <li><i class="fas fa-check"></i> Anniversaires</li>
+                            <li><i class="fas fa-check"></i> Prestige absolu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vignobles Section -->
+    <section id="vignobles" class="vineyards-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="deco-line"></div>
+                <h2 class="section-title">Circuits Vignobles Champagne</h2>
+                <p class="section-subtitle">Découvrez les trésors viticoles de la Marne</p>
+                <div class="deco-line"></div>
+            </div>
+
+            <div class="vineyards-content">
+                <div class="vineyards-text">
+                    <h3>Une Expérience Œnologique Unique</h3>
+                    <p>Partez à la découverte des plus prestigieuses maisons de Champagne et des vignobles de la Marne dans le confort de nos véhicules premium.</p>
+                    
+                    <div class="vineyards-features">
+                        <div class="vineyard-feature">
+                            <i class="fas fa-route"></i>
+                            <div>
+                                <h4>Circuits Personnalisés</h4>
+                                <p>Itinéraires sur-mesure adaptés à vos préférences et disponibilités.</p>
+                            </div>
+                        </div>
+                        <div class="vineyard-feature">
+                            <i class="fas fa-glass-cheers"></i>
+                            <div>
+                                <h4>Visites de Caves</h4>
+                                <p>Accès aux caves des plus grandes maisons de Champagne et producteurs indépendants.</p>
+                            </div>
+                        </div>
+                        <div class="vineyard-feature">
+                            <i class="fas fa-wine-bottle"></i>
+                            <div>
+                                <h4>Dégustations Guidées</h4>
+                                <p>Séances de dégustation commentées par des experts.</p>
+                            </div>
+                        </div>
+                        <div class="vineyard-feature">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h4>Routes Touristiques</h4>
+                                <p>Découverte des paysages classés UNESCO de la Champagne.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vineyards-highlights">
+                        <h4>Nos Destinations</h4>
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Avenue de Champagne - Épernay</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Montagne de Reims</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Côte des Blancs</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Vallée de la Marne</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#reservation" class="btn btn-primary">
+                        <span>Réserver un Circuit</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="vineyards-image">
+                    <img src="chauffeur-bagage.png" alt="Service chauffeur premium" loading="lazy">
+                    <div class="image-deco"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="deco-line"></div>
+                <h2 class="section-title">Réservation</h2>
+                <p class="section-subtitle">Obtenez un devis rapide et transparent pour tous vos déplacements</p>
+                <div class="deco-line"></div>
+            </div>
+
+            <div class="reservation-content">
+                <div class="reservation-intro">
+                    <p>Que ce soit pour un transfert aéroport, un trajet urbain ou une mise à disposition, remplissez notre formulaire ci-dessous et recevez votre estimation personnalisée sous 24h. Voyagez en toute sérénité !</p>
+                </div>
+
+                <form class="reservation-form" id="reservationForm">
+                    <div class="form-section">
+                        <h3><i class="fas fa-route"></i> Détails du Trajet</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="depart">Adresse de départ *</label>
+                                <input type="text" id="depart" name="depart" placeholder="Ex: 10 rue de la Paix, Paris" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="arrivee">Adresse d'arrivée *</label>
+                                <input type="text" id="arrivee" name="arrivee" placeholder="Ex: 25 avenue des Champs, Lyon" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passagers">Nombre de passagers *</label>
+                                <select id="passagers" name="passagers" required>
+                                    <option value="1">1 passager</option>
+                                    <option value="2">2 passagers</option>
+                                    <option value="3">3 passagers</option>
+                                    <option value="4">4 passagers</option>
+                                    <option value="5">5 passagers</option>
+                                    <option value="6">6 passagers</option>
+                                    <option value="7">7 passagers</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bagages">Nombre de bagages</label>
+                                <select id="bagages" name="bagages">
+                                    <option value="0">0 bagage</option>
+                                    <option value="1">1 bagage</option>
+                                    <option value="2">2 bagages</option>
+                                    <option value="3">3 bagages</option>
+                                    <option value="4">4 bagages</option>
+                                    <option value="5">5+ bagages</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicule">Type de véhicule souhaité *</label>
+                                <select id="vehicule" name="vehicule" required>
+                                    <option value="">Sélectionnez un type</option>
+                                    <option value="berline">Berline Premium</option>
+                                    <option value="suv">SUV Premium</option>
+                                    <option value="van">Van 5-7 places</option>
+                                    <option value="limousine">Limousine Service</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date du trajet *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="heure">Heure du trajet *</label>
+                                <input type="time" id="heure" name="heure" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Vos Coordonnées</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telephone">Téléphone *</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="+33 6 12 34 56 78" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Informations complémentaires</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Précisions sur votre demande, arrêts intermédiaires, demandes spéciales..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>Envoyer ma demande</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="form-note">Réponse sous 24h • Tarifs transparents • Sans engagement</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="deco-line"></div>
+                <h2 class="section-title">Contactez-Nous</h2>
+                <div class="deco-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:0339912014">03 39 91 20 14</a></p>
+                            <p><a href="tel:0743688399">07 43 68 83 99</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:kstp.premium@dr.com">kstp.premium@dr.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Adresse</h3>
+                            <p>12 Rue Guillaume Apollinaire<br>51100 Reims, France</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/33743688399" target="_blank">+33 7 43 68 83 99</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-hours">
+                    <h3><i class="fas fa-clock"></i> Disponibilité</h3>
+                    <div class="hours-list">
+                        <div class="hour-item">
+                            <span class="day">Lundi - Vendredi</span>
+                            <span class="time">24h/24</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Samedi - Dimanche</span>
+                            <span class="time">24h/24</span>
+                        </div>
+                    </div>
+                    <p class="availability-note"><i class="fas fa-info-circle"></i> Service disponible 24h/24 et 7j/7 pour tous vos besoins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="ks-removebg-preview.png" alt="KSTP Premium" class="footer-logo">
+                    <p>Votre service de chauffeur privé haut de gamme à Reims et partout en France.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/33743688399" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#flotte">Nos Véhicules</a></li>
+                        <li><a href="#vignobles">Vignobles</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:0339912014">03 39 91 20 14</a></li>
+                        <li><i class="fas fa-mobile-alt"></i> <a href="tel:0743688399">07 43 68 83 99</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:kstp.premium@dr.com">kstp.premium@dr.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Adresse</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 12 Rue Guillaume Apollinaire<br>51100 Reims, France</p>
+                    <a href="#reservation" class="btn btn-secondary btn-small">Réserver</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 KSTP PREMIUM - SASU | SIREN: 939 571 147 | Tous droits réservés</p>
+                <p><a href="mentions-legales.html">Mentions Légales</a> | Réalisé par <a href="https://w2k-digital.com" target="_blank">W2K-DIGITAL</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
