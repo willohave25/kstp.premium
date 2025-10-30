@@ -1,280 +1,277 @@
-// ========================================
-// NAVIGATION - MENU BURGER
-// ========================================
-
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
-
-// Toggle du menu
-burger.addEventListener('click', () => {
-    // Toggle Navigation
-    nav.classList.toggle('nav-active');
-    
-    // Animate Links
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-        }
-    });
-    
-    // Burger Animation
-    burger.classList.toggle('toggle');
-});
-
-// Fermer le menu quand on clique sur un lien
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('nav-active');
-        burger.classList.remove('toggle');
-    });
-});
-
-// ========================================
-// SMOOTH SCROLLING
-// ========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ========================================
-// NAVBAR SCROLL EFFECT
-// ========================================
-
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// ========================================
-// FORMULAIRE DE RÉSERVATION
-// ========================================
-
-const bookingForm = document.getElementById('bookingForm');
-
-if (bookingForm) {
-    bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Récupération des données
-        const formData = {
-            nom: document.getElementById('nom').value,
-            email: document.getElementById('email').value,
-            telephone: document.getElementById('telephone').value,
-            service: document.getElementById('service').value,
-            date: document.getElementById('date').value,
-            heure: document.getElementById('heure').value,
-            depart: document.getElementById('depart').value,
-            arrivee: document.getElementById('arrivee').value,
-            passagers: document.getElementById('passagers').value,
-            message: document.getElementById('message').value
-        };
-        
-        // Simulation d'envoi (à remplacer par une vraie API)
-        console.log('Réservation soumise:', formData);
-        
-        // Message de confirmation
-        alert('Merci pour votre réservation ! Nous vous contacterons rapidement pour confirmer.');
-        
-        // Reset du formulaire
-        bookingForm.reset();
-    });
-}
-
-// ========================================
-// VALIDATION DU FORMULAIRE EN TEMPS RÉEL
-// ========================================
-
-const emailInput = document.getElementById('email');
-const telInput = document.getElementById('telephone');
-
-if (emailInput) {
-    emailInput.addEventListener('blur', function() {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(this.value)) {
-            this.style.borderColor = 'red';
-        } else {
-            this.style.borderColor = '#D4AF37';
-        }
-    });
-}
-
-if (telInput) {
-    telInput.addEventListener('input', function() {
-        // Nettoie l'input pour ne garder que les chiffres
-        this.value = this.value.replace(/[^0-9]/g, '');
-    });
-}
-
-// ========================================
-// DATE MINIMUM POUR LA RÉSERVATION
-// ========================================
-
-const dateInput = document.getElementById('date');
-if (dateInput) {
-    // Définir la date minimum à aujourd'hui
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-}
-
-// ========================================
-// ANIMATION AU SCROLL (INTERSECTION OBSERVER)
-// ========================================
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-        }
-    });
-}, observerOptions);
-
-// Observer tous les éléments avec la classe 'fade-element'
-document.querySelectorAll('.service-card, .vehicle-card, .about-content').forEach(el => {
-    observer.observe(el);
-});
-
-// ========================================
-// TESTIMONIALS CAROUSEL
-// ========================================
+// ===================================
+// KSTP PREMIUM - JAVASCRIPT
+// W2K-DIGITAL 
+// ===================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const track = document.querySelector('.testimonial-track');
-    const slides = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const dots = document.querySelectorAll('.carousel-dot');
     
-    if (!track || slides.length === 0) return; // Protection si éléments manquants
+    // ====== MOBILE MENU ======
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
     
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    let autoSlideInterval;
-
-    // Fonction pour aller à un slide spécifique
-    function goToSlide(index) {
-        currentSlide = index;
-        const offset = -currentSlide * 100;
-        track.style.transform = `translateX(${offset}%)`;
-        
-        // Update dots
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlide);
-        });
-    }
-
-    // Slide suivant
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        goToSlide(currentSlide);
-    }
-
-    // Slide précédent
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        goToSlide(currentSlide);
-    }
-
-    // Auto-slide toutes les 5 secondes
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-
-    // Arrêter l'auto-slide
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-    }
-
-    // Event listeners pour les boutons
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
-    }
-
-    // Event listeners pour les dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            stopAutoSlide();
-            startAutoSlide();
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
         });
     });
-
-    // Pause l'auto-slide au survol
-    const carousel = document.querySelector('.testimonials-carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', stopAutoSlide);
-        carousel.addEventListener('mouseleave', startAutoSlide);
-    }
-
-    // Support du swipe sur mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    if (track) {
-        track.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        track.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-    }
-
-    function handleSwipe() {
-        if (touchStartX - touchEndX > 50) {
-            nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
+    
+    // ====== NAVBAR SCROLL ======
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
-        if (touchEndX - touchStartX > 50) {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    // ====== ACTIVE NAV LINK ======
+    const sections = document.querySelectorAll('section[id]');
+    
+    function setActiveNav() {
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 150;
+            const sectionId = section.getAttribute('id');
+            const navLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLink?.classList.add('active');
+            } else {
+                navLink?.classList.remove('active');
+            }
+        });
     }
+    
+    window.addEventListener('scroll', setActiveNav);
+    
+    // ====== SMOOTH SCROLL ======
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // ====== SCROLL REVEAL ANIMATION ======
+    const revealElements = document.querySelectorAll('.service-card, .fleet-card, .about-item, .vineyard-feature, .contact-item');
+    
+    function reveal() {
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 100;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('reveal', 'active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', reveal);
+    reveal(); // Initial check
+    
+    // ====== LAZY LOADING IMAGES ======
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        lazyImages.forEach(img => img.classList.add('loaded'));
+    }
+    
+    // ====== FORM HANDLING ======
+    const reservationForm = document.getElementById('reservationForm');
+    
+    if (reservationForm) {
+        reservationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                depart: document.getElementById('depart').value,
+                arrivee: document.getElementById('arrivee').value,
+                passagers: document.getElementById('passagers').value,
+                bagages: document.getElementById('bagages').value,
+                vehicule: document.getElementById('vehicule').value,
+                date: document.getElementById('date').value,
+                heure: document.getElementById('heure').value,
+                nom: document.getElementById('nom').value,
+                email: document.getElementById('email').value,
+                telephone: document.getElementById('telephone').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Validate required fields
+            const requiredFields = ['depart', 'arrivee', 'passagers', 'vehicule', 'date', 'heure', 'nom', 'email', 'telephone'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+            
+            // Create email body
+            const emailBody = `
+NOUVELLE DEMANDE DE RÉSERVATION - KSTP PREMIUM
+═══════════════════════════════════════
 
-    // Démarre l'auto-slide au chargement
-    startAutoSlide();
+DÉTAILS DU TRAJET
+─────────────────
+• Départ: ${formData.depart}
+• Arrivée: ${formData.arrivee}
+• Passagers: ${formData.passagers}
+• Bagages: ${formData.bagages}
+• Véhicule: ${formData.vehicule}
+• Date: ${formData.date}
+• Heure: ${formData.heure}
+
+COORDONNÉES CLIENT
+──────────────────
+• Nom: ${formData.nom}
+• Email: ${formData.email}
+• Téléphone: ${formData.telephone}
+
+MESSAGE COMPLÉMENTAIRE
+──────────────────────
+${formData.message || 'Aucun message'}
+
+═══════════════════════════════════════
+Demande reçue le: ${new Date().toLocaleString('fr-FR')}
+            `.trim();
+            
+            // Create mailto link
+            const subject = `Réservation KSTP Premium - ${formData.nom}`;
+            const mailtoLink = `mailto:kstp.premium@dr.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Votre demande a été préparée ! Veuillez envoyer l\'email depuis votre client de messagerie.\n\nNous vous répondrons sous 24h.');
+                reservationForm.reset();
+            }, 500);
+        });
+        
+        // Real-time validation
+        const inputs = reservationForm.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.style.borderColor === 'rgb(231, 76, 60)') {
+                    this.style.borderColor = '';
+                }
+            });
+        });
+    }
+    
+    // ====== DATE INPUT MIN DATE ======
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    }
+    
+    // ====== HERO SCROLL BUTTON ======
+    const heroScroll = document.querySelector('.hero-scroll');
+    if (heroScroll) {
+        heroScroll.addEventListener('click', () => {
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+    
+    // ====== PERFORMANCE - Defer non-critical scripts ======
+    function deferLoadingHelper() {
+        // Add any additional performance optimizations here
+        console.log('KSTP Premium - Site loaded successfully! 🚀');
+    }
+    
+    if (document.readyState === 'complete') {
+        deferLoadingHelper();
+    } else {
+        window.addEventListener('load', deferLoadingHelper);
+    }
+    
+    // ====== WHATSAPP ANALYTICS (optional) ======
+    const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
+    whatsappButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            console.log('WhatsApp contact initiated');
+            // Add analytics tracking here if needed
+        });
+    });
+    
+    // ====== PHONE CALL ANALYTICS (optional) ======
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            console.log('Phone call initiated:', this.getAttribute('href'));
+            // Add analytics tracking here if needed
+        });
+    });
 });
 
-// ========================================
-// LOADING ANIMATION
-// ========================================
-
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+// ====== PERFORMANCE MONITORING ======
+window.addEventListener('load', function() {
+    // Log performance metrics
+    if (window.performance) {
+        const perfData = window.performance.timing;
+        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+        console.log(`Page load time: ${pageLoadTime}ms`);
+    }
 });
