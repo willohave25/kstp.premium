@@ -235,7 +235,10 @@ MESSAGE:
 ${data.message || 'Aucun message'}
 
 ─────────────────────────────
-Demande envoyée depuis le site KSTP PREMIUM
+Demande envoyée depuis KSTP PREMIUM
+Site web: https://kstp-premium.com
+Téléphone: 03 39 91 20 14 / 07 43 68 83 99
+Email: contact@kstp-premium.com
         `);
         
         const mailtoLink = `mailto:contact@kstp-premium.com?subject=${subject}&body=${body}`;
