@@ -1,277 +1,361 @@
-// ===================================
-// KSTP PREMIUM - JAVASCRIPT
-// W2K-DIGITAL × Claude
-// ===================================
+// Navigation scroll effect
+const navbar = document.getElementById('navbar');
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ====== MOBILE MENU ======
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
     });
-    
-    // Close menu when clicking on a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-        });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
-    
-    // ====== NAVBAR SCROLL ======
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+});
+
+// Scroll reveal animation
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Elements to animate on scroll
+const animateOnScroll = document.querySelectorAll('.about-item, .service-card, .fleet-card, .contact-item');
+animateOnScroll.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// ========================================
+// TESTIMONIALS CAROUSEL
+// ========================================
+
+const track = document.getElementById('testimonialTrack');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const dotsContainer = document.getElementById('carouselDots');
+
+if (track && prevBtn && nextBtn && dotsContainer) {
+    const cards = track.querySelectorAll('.testimonial-card');
+    const totalCards = cards.length;
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    // Create dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
         
-        if (currentScroll > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateCarousel();
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoplay();
+    });
+
+    // Pause autoplay on hover
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+
+    // Touch events for mobile swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            nextSlide();
+        }
+        if (touchEndX > touchStartX + 50) {
+            prevSlide();
+        }
+    }
+
+    // Start autoplay on load
+    startAutoplay();
+}
+
+// ========================================
+// FORM VALIDATION AND SUBMISSION
+// ========================================
+
+const reservationForm = document.getElementById('reservationForm');
+
+if (reservationForm) {
+    reservationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        
+        // Basic validation
+        if (!data.nom || !data.email || !data.telephone) {
+            alert('Veuillez remplir tous les champs obligatoires.');
+            return;
         }
         
-        lastScroll = currentScroll;
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            alert('Veuillez entrer une adresse email valide.');
+            return;
+        }
+        
+        // Phone validation (French format)
+        const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+        if (!phoneRegex.test(data.telephone)) {
+            alert('Veuillez entrer un numéro de téléphone valide.');
+            return;
+        }
+        
+        // Create mailto link with form data
+        const subject = encodeURIComponent('Nouvelle demande de réservation - ' + data.nom);
+        const body = encodeURIComponent(`
+NOUVELLE DEMANDE DE RÉSERVATION
+
+DÉTAILS DU TRAJET:
+─────────────────────────────
+Lieu de départ: ${data.depart || 'Non spécifié'}
+Lieu d'arrivée: ${data.arrivee || 'Non spécifié'}
+Nombre de passagers: ${data.passagers || 'Non spécifié'}
+Nombre de bagages: ${data.bagages || 'Non spécifié'}
+Type de véhicule: ${data.vehicule || 'Non spécifié'}
+Date: ${data.date || 'Non spécifiée'}
+Heure: ${data.heure || 'Non spécifiée'}
+
+COORDONNÉES CLIENT:
+─────────────────────────────
+Nom: ${data.nom}
+Email: ${data.email}
+Téléphone: ${data.telephone}
+
+MESSAGE:
+─────────────────────────────
+${data.message || 'Aucun message'}
+
+─────────────────────────────
+Demande envoyée depuis le site KSTP PREMIUM
+        `);
+        
+        const mailtoLink = `mailto:contact@kstp-premium.com?subject=${subject}&body=${body}`;
+        
+        // Open mailto link
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        alert('Votre demande de réservation va être envoyée par email. Nous vous répondrons dans les plus brefs délais !');
+        
+        // Reset form
+        this.reset();
     });
     
-    // ====== ACTIVE NAV LINK ======
-    const sections = document.querySelectorAll('section[id]');
-    
-    function setActiveNav() {
-        const scrollY = window.pageYOffset;
-        
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 150;
-            const sectionId = section.getAttribute('id');
-            const navLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
-            
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink?.classList.add('active');
+    // Real-time validation feedback
+    const requiredFields = reservationForm.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        field.addEventListener('blur', function() {
+            if (!this.value) {
+                this.style.borderColor = '#dc3545';
             } else {
-                navLink?.classList.remove('active');
+                this.style.borderColor = '#C9A961';
             }
         });
-    }
-    
-    window.addEventListener('scroll', setActiveNav);
-    
-    // ====== SMOOTH SCROLL ======
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+        
+        field.addEventListener('input', function() {
+            if (this.value) {
+                this.style.borderColor = '#C9A961';
+            }
+        });
+    });
+}
+
+// Lazy loading images
+const images = document.querySelectorAll('img[loading="lazy"]');
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
             }
         });
     });
     
-    // ====== SCROLL REVEAL ANIMATION ======
-    const revealElements = document.querySelectorAll('.service-card, .fleet-card, .about-item, .vineyard-feature, .contact-item');
-    
-    function reveal() {
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 100;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('reveal', 'active');
-            }
-        });
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Current year in footer
+const currentYear = new Date().getFullYear();
+const yearElements = document.querySelectorAll('.current-year');
+yearElements.forEach(el => {
+    el.textContent = currentYear;
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.hero');
+    if (parallax) {
+        parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
+});
+
+// WhatsApp floating button animation on scroll
+const whatsappFloat = document.querySelector('.whatsapp-float');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    window.addEventListener('scroll', reveal);
-    reveal(); // Initial check
-    
-    // ====== LAZY LOADING IMAGES ======
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            });
-        });
-        
-        lazyImages.forEach(img => imageObserver.observe(img));
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        whatsappFloat.style.transform = 'scale(0.8)';
     } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        lazyImages.forEach(img => img.classList.add('loaded'));
+        // Scrolling up
+        whatsappFloat.style.transform = 'scale(1)';
     }
     
-    // ====== FORM HANDLING ======
-    const reservationForm = document.getElementById('reservationForm');
-    
-    if (reservationForm) {
-        reservationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                depart: document.getElementById('depart').value,
-                arrivee: document.getElementById('arrivee').value,
-                passagers: document.getElementById('passagers').value,
-                bagages: document.getElementById('bagages').value,
-                vehicule: document.getElementById('vehicule').value,
-                date: document.getElementById('date').value,
-                heure: document.getElementById('heure').value,
-                nom: document.getElementById('nom').value,
-                email: document.getElementById('email').value,
-                telephone: document.getElementById('telephone').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Validate required fields
-            const requiredFields = ['depart', 'arrivee', 'passagers', 'vehicule', 'date', 'heure', 'nom', 'email', 'telephone'];
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                const input = document.getElementById(field);
-                if (!input.value.trim()) {
-                    input.style.borderColor = '#e74c3c';
-                    isValid = false;
-                } else {
-                    input.style.borderColor = '';
-                }
-            });
-            
-            if (!isValid) {
-                alert('Veuillez remplir tous les champs obligatoires.');
-                return;
-            }
-            
-            // Create email body
-            const emailBody = `
-NOUVELLE DEMANDE DE RÉSERVATION - KSTP PREMIUM
-═══════════════════════════════════════
+    lastScrollTop = scrollTop;
+}, false);
 
-DÉTAILS DU TRAJET
-─────────────────
-• Départ: ${formData.depart}
-• Arrivée: ${formData.arrivee}
-• Passagers: ${formData.passagers}
-• Bagages: ${formData.bagages}
-• Véhicule: ${formData.vehicule}
-• Date: ${formData.date}
-• Heure: ${formData.heure}
-
-COORDONNÉES CLIENT
-──────────────────
-• Nom: ${formData.nom}
-• Email: ${formData.email}
-• Téléphone: ${formData.telephone}
-
-MESSAGE COMPLÉMENTAIRE
-──────────────────────
-${formData.message || 'Aucun message'}
-
-═══════════════════════════════════════
-Demande reçue le: ${new Date().toLocaleString('fr-FR')}
-            `.trim();
-            
-            // Create mailto link
-            const subject = `Réservation KSTP Premium - ${formData.nom}`;
-            const mailtoLink = `mailto:kstp.premium@dr.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            setTimeout(() => {
-                alert('Votre demande a été préparée ! Veuillez envoyer l\'email depuis votre client de messagerie.\n\nNous vous répondrons sous 24h.');
-                reservationForm.reset();
-            }, 500);
-        });
-        
-        // Real-time validation
-        const inputs = reservationForm.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && !this.value.trim()) {
-                    this.style.borderColor = '#e74c3c';
-                } else {
-                    this.style.borderColor = '';
-                }
-            });
-            
-            input.addEventListener('input', function() {
-                if (this.style.borderColor === 'rgb(231, 76, 60)') {
-                    this.style.borderColor = '';
-                }
-            });
-        });
-    }
-    
-    // ====== DATE INPUT MIN DATE ======
-    const dateInput = document.getElementById('date');
-    if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-    }
-    
-    // ====== HERO SCROLL BUTTON ======
-    const heroScroll = document.querySelector('.hero-scroll');
-    if (heroScroll) {
-        heroScroll.addEventListener('click', () => {
-            const servicesSection = document.getElementById('services');
-            if (servicesSection) {
-                servicesSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    }
-    
-    // ====== PERFORMANCE - Defer non-critical scripts ======
-    function deferLoadingHelper() {
-        // Add any additional performance optimizations here
-        console.log('KSTP Premium - Site loaded successfully! 🚀');
-    }
-    
-    if (document.readyState === 'complete') {
-        deferLoadingHelper();
-    } else {
-        window.addEventListener('load', deferLoadingHelper);
-    }
-    
-    // ====== WHATSAPP ANALYTICS (optional) ======
-    const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
-    whatsappButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            console.log('WhatsApp contact initiated');
-            // Add analytics tracking here if needed
-        });
+// Add hover effect to cards
+const cards = document.querySelectorAll('.service-card, .fleet-card, .about-item');
+cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
     });
     
-    // ====== PHONE CALL ANALYTICS (optional) ======
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            console.log('Phone call initiated:', this.getAttribute('href'));
-            // Add analytics tracking here if needed
-        });
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
     });
 });
 
-// ====== PERFORMANCE MONITORING ======
-window.addEventListener('load', function() {
-    // Log performance metrics
-    if (window.performance) {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page load time: ${pageLoadTime}ms`);
-    }
+// Performance: Defer non-critical scripts
+window.addEventListener('load', () => {
+    console.log('KSTP Premium website loaded successfully');
 });
+
+// Accessibility: Skip to main content
+const skipLink = document.createElement('a');
+skipLink.href = '#accueil';
+skipLink.className = 'skip-link';
+skipLink.textContent = 'Passer au contenu principal';
+skipLink.style.cssText = `
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--gold);
+    color: var(--black);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+`;
+skipLink.addEventListener('focus', () => {
+    skipLink.style.top = '0';
+});
+skipLink.addEventListener('blur', () => {
+    skipLink.style.top = '-40px';
+});
+document.body.insertBefore(skipLink, document.body.firstChild);
