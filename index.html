@@ -43,32 +43,158 @@
         </div>
     </nav>
 
-    <section id="accueil" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="container">
-                <div class="art-deco-border"></div>
-                <img src="ks-removebg-preview.png" alt="KSTP Premium" class="hero-logo fade-in">
-                <h1 class="hero-title fade-in-up">L'Excellence du Transport Premium</h1>
-                <p class="hero-subtitle fade-in-up delay-1">Votre chauffeur privé haut de gamme à Reims et partout en France</p>
-                <div class="hero-cta fade-in-up delay-2">
-                    <a href="#reservation" class="btn btn-primary">
-                        <span>Réserver Maintenant</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="https://wa.me/33743688399" class="btn btn-secondary">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                </div>
-                <div class="art-deco-border bottom"></div>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <span>Découvrir</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+   /* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1600') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, rgba(26, 26, 26, 0.9) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem;
+}
+
+.hero-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.art-deco-border {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.hero-logo {
+    max-width: 400px;
+    width: 80%;
+    margin: 0 auto 2rem;
+    filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3));
+}
+
+.hero-title {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: var(--gold-light);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    border: 2px solid var(--gold);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translateY(-3px);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
 
     <section class="about-section">
         <div class="container">
