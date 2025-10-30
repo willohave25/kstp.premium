@@ -3,277 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - KSTP Premium</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Contactez KSTP Premium - Chauffeur privé VTC à Reims - Téléphone, email, adresse">
+    <title>Contact | KSTP PREMIUM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-crown"></i>
-                KSTP Premium
-            </a>
-            <ul class="nav-links">
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">KSTP PREMIUM</a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="fleet.html">Notre Flotte</a></li>
-                <li><a href="tarifs.html">Tarifs</a></li>
-                <li><a href="avis.html">Avis Clients</a></li>
-                <li><a href="about.html">À Propos</a></li>
+                <li><a href="vehicules.html">Nos Véhicules</a></li>
+                <li><a href="vignobles.html">Vignobles</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-        <div class="page-header-overlay"></div>
-        <div class="page-header-content">
-            <h1>Contactez-Nous</h1>
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-content">
+            <h1>Contactez-nous</h1>
             <p>Nous sommes à votre écoute 24h/24, 7j/7</p>
         </div>
     </section>
 
-    <!-- CONTACT RAPIDE -->
-    <section class="quick-contact">
-        <div class="container">
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
+    <!-- Contact Info & Form -->
+    <section>
+        <div class="contact-container">
+            <!-- Informations de contact -->
+            <div class="contact-info">
+                <h3>Nos Coordonnées</h3>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h4>Téléphone Fixe</h4>
+                        <p><a href="tel:+33339922014" style="color: var(--white);">03 39 92 20 14</a></p>
                     </div>
-                    <h3>Téléphone</h3>
-                    <p>Service disponible 24/7</p>
-                    <a href="tel:0743688399" class="contact-link">07 43 68 83 99</a>
                 </div>
 
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                <div class="info-item">
+                    <div class="info-icon">📱</div>
+                    <div class="info-text">
+                        <h4>Mobile</h4>
+                        <p><a href="tel:+33743688399" style="color: var(--white);">07 43 68 83 99</a></p>
                     </div>
-                    <h3>Email</h3>
-                    <p>Réponse sous 2h en journée</p>
-                    <a href="mailto:contact@kstp-premium.com" class="contact-link">contact@kstp-premium.com</a>
                 </div>
 
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div class="info-text">
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/33743688399" target="_blank" style="color: var(--white);">+33 7 43 68 83 99</a></p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Réponse rapide garantie</p>
                     </div>
-                    <h3>Localisation</h3>
-                    <p>Basés à Reims</p>
-                    <span class="contact-link">Service dans toute la France</span>
                 </div>
 
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p><a href="mailto:contact@kstp-premium.com" style="color: var(--white);">contact@kstp-premium.com</a></p>
                     </div>
-                    <h3>Disponibilité</h3>
-                    <p>Réservation 24h/24</p>
-                    <span class="contact-link">Toute l'année</span>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>Adresse</h4>
+                        <p>12 Rue Guillaume Apollinaire<br>51100 Reims<br>France</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-text">
+                        <h4>Horaires</h4>
+                        <p>Service disponible 24h/24<br>7 jours sur 7<br>Réservation recommandée</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FORMULAIRE DE CONTACT -->
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-form-wrapper">
-                    <h2>Envoyez-nous un Message</h2>
-                    <p class="form-intro">Remplissez ce formulaire et nous vous recontacterons dans les plus brefs délais.</p>
-                    
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-row-two">
-                            <div class="form-group">
-                                <label for="nom">Nom complet *</label>
-                                <input type="text" id="nom" name="nom" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
+            <!-- Formulaire de contact -->
+            <div class="contact-form">
+                <h3 style="color: var(--black); margin-bottom: 1.5rem;">Envoyez-nous un message</h3>
+                <p style="color: #666; margin-bottom: 2rem;">Nous vous répondrons dans les plus brefs délais.</p>
 
-                        <div class="form-row-two">
-                            <div class="form-group">
-                                <label for="telephone">Téléphone *</label>
-                                <input type="tel" id="telephone" name="telephone" required>
-                            </div>
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
 
-                            <div class="form-group">
-                                <label for="service">Type de service</label>
-                                <select id="service" name="service">
-                                    <option value="">Sélectionnez un service</option>
-                                    <option value="aeroport">Transfert Aéroport</option>
-                                    <option value="evenement">Événement</option>
-                                    <option value="affaires">Déplacement Professionnel</option>
-                                    <option value="tourisme">Circuit Touristique</option>
-                                    <option value="longue-distance">Longue Distance</option>
-                                    <option value="disposition">Mise à Disposition</option>
-                                    <option value="autre">Autre</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row-two">
-                            <div class="form-group">
-                                <label for="date">Date souhaitée</label>
-                                <input type="date" id="date" name="date">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="heure">Heure souhaitée</label>
-                                <input type="time" id="heure" name="heure">
-                            </div>
-                        </div>
-
+                    <div class="form-row">
                         <div class="form-group">
-                            <label for="message">Votre message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin..."></textarea>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-
-                        <div class="form-checkbox">
-                            <input type="checkbox" id="rgpd" name="rgpd" required>
-                            <label for="rgpd">J'accepte que mes données soient utilisées pour me recontacter concernant ma demande *</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <span>Envoyer le Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="contact-info-sidebar">
-                    <div class="info-box">
-                        <h3><i class="fas fa-headset"></i> Service Client</h3>
-                        <p>Notre équipe est disponible pour répondre à toutes vos questions</p>
-                        <ul class="info-list">
-                            <li><i class="fas fa-check"></i> Réponse rapide garantie</li>
-                            <li><i class="fas fa-check"></i> Devis gratuit sous 24h</li>
-                            <li><i class="fas fa-check"></i> Conseils personnalisés</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <h3><i class="fas fa-shield-alt"></i> Confidentialité</h3>
-                        <p>Vos données sont protégées et ne seront jamais partagées avec des tiers.</p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3><i class="fas fa-clock"></i> Temps de Réponse</h3>
-                        <ul class="response-times">
-                            <li><strong>Email :</strong> Sous 2h (jours ouvrés)</li>
-                            <li><strong>Téléphone :</strong> Immédiat 24/7</li>
-                            <li><strong>Devis :</strong> Sous 24h</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box social-box">
-                        <h3><i class="fas fa-share-alt"></i> Suivez-nous</h3>
-                        <div class="social-links-large">
-                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required>
                         </div>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet *</label>
+                        <select id="sujet" name="sujet" required>
+                            <option value="">-- Sélectionnez un sujet --</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="reservation">Réservation</option>
+                            <option value="renseignement">Renseignement</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="partenariat">Partenariat</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Envoyer le message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Questions Fréquentes</h2>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3><i class="fas fa-question-circle"></i> Comment réserver un trajet ?</h3>
-                    <p>Vous pouvez réserver par téléphone au 07 43 68 83 99, par email, ou via notre formulaire en ligne. Nous confirmons toutes les réservations sous 2 heures.</p>
-                </div>
+    <!-- Map -->
+    <section style="padding: 0;">
+        <div style="width: 100%; height: 450px; background: var(--light-gray);">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.8!2d4.03!3d49.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDE1JzAwLjAiTiA0wrAwMScxMC4wIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
 
-                <div class="faq-item">
-                    <h3><i class="fas fa-question-circle"></i> Quel est le délai de réservation ?</h3>
-                    <p>Nous acceptons les réservations jusqu'à 2 heures avant le départ, sous réserve de disponibilité. Pour les événements importants, nous recommandons de réserver au moins 48h à l'avance.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3><i class="fas fa-question-circle"></i> Quels moyens de paiement acceptez-vous ?</h3>
-                    <p>Nous acceptons les cartes bancaires, virements, espèces, et proposons la facturation pour les entreprises. Le paiement peut se faire à l'avance ou après la prestation.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3><i class="fas fa-question-circle"></i> Que se passe-t-il en cas de retard de vol ?</h3>
-                    <p>Nous suivons votre vol en temps réel et ajustons automatiquement l'heure de prise en charge. Aucun frais supplémentaire n'est appliqué en cas de retard de vol.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3><i class="fas fa-question-circle"></i> Puis-je modifier ma réservation ?</h3>
-                    <p>Oui, vous pouvez modifier votre réservation gratuitement jusqu'à 24h avant le départ. Pour les modifications de dernière minute, contactez-nous directement.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3><i class="fas fa-question-circle"></i> Couvrez-vous toute la France ?</h3>
-                    <p>Oui, nous assurons des trajets dans toute la France et vers les pays limitrophes (Belgique, Luxembourg, Suisse, Allemagne). Des suppléments peuvent s'appliquer pour les longues distances.</p>
-                </div>
+    <!-- FAQ / Infos pratiques -->
+    <section style="background: var(--light-gray);">
+        <h2 class="section-title">Questions Fréquentes</h2>
+        
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="service-card" style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">📋 Comment réserver ?</h3>
+                <p>Vous pouvez réserver par téléphone (03 39 92 20 14 ou 07 43 68 83 99), WhatsApp, email ou via notre formulaire en ligne. Nous confirmons votre réservation dans les plus brefs délais.</p>
             </div>
 
-            <div class="faq-cta">
-                <p>Vous n'avez pas trouvé la réponse à votre question ?</p>
-                <a href="tel:0743688399" class="btn btn-secondary">Appelez-nous</a>
+            <div class="service-card" style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">💳 Quels moyens de paiement acceptez-vous ?</h3>
+                <p>Nous acceptons les espèces, cartes bancaires, virements et paiements entreprise avec facturation. Le paiement peut se faire à bord ou par virement selon la prestation.</p>
+            </div>
+
+            <div class="service-card" style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">🚫 Quelle est votre politique d'annulation ?</h3>
+                <p>Annulation gratuite jusqu'à 24h avant la prestation. Au-delà, des frais peuvent s'appliquer selon le type de service réservé.</p>
+            </div>
+
+            <div class="service-card" style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">🎫 Proposez-vous des factures ?</h3>
+                <p>Oui, nous fournissons systématiquement une facture détaillée pour tous nos services, idéal pour vos notes de frais professionnelles.</p>
+            </div>
+
+            <div class="service-card">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">🌍 Couvrez-vous d'autres régions ?</h3>
+                <p>Basés à Reims, nous couvrons toute la région Champagne-Ardenne et proposons des trajets longue distance partout en France et à l'international.</p>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- CTA final -->
+    <section style="text-align: center; padding: 5rem 2rem;">
+        <h2 class="section-title">Prêt à partir ?</h2>
+        <p class="section-subtitle">Réservez dès maintenant votre prochain trajet</p>
+        <div class="cta-buttons">
+            <a href="reservation.html" class="btn btn-primary">Demander un devis</a>
+            <a href="https://wa.me/33743688399" target="_blank" class="btn btn-secondary">WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>KSTP Premium</h3>
-                <p>Votre chauffeur privé de luxe à Reims</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <h3>KSTP PREMIUM</h3>
+                <p>Service de chauffeur privé premium</p>
+                <p>SASU - SIREN: 939 571 147</p>
+                <p>RCS Reims</p>
             </div>
+
             <div class="footer-section">
-                <h3>Liens Rapides</h3>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="fleet.html">Notre Flotte</a></li>
-                    <li><a href="tarifs.html">Tarifs</a></li>
-                </ul>
+                <h3>Navigation</h3>
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="vehicules.html">Nos Véhicules</a>
+                <a href="vignobles.html">Vignobles</a>
+                <a href="contact.html">Contact</a>
             </div>
+
             <div class="footer-section">
                 <h3>Contact</h3>
-                <ul>
-                    <li><i class="fas fa-phone"></i> 07 43 68 83 99</li>
-                    <li><i class="fas fa-envelope"></i> contact@kstp-premium.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Reims, France</li>
-                </ul>
+                <p>📞 Fixe: 03 39 92 20 14</p>
+                <p>📱 Mobile: 07 43 68 83 99</p>
+                <p>✉️ contact@kstp-premium.com</p>
+                <p>📍 12 Rue Guillaume Apollinaire<br>51100 Reims, France</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Service disponible 24h/24</p>
+                <p>7 jours sur 7</p>
+                <p>Réservation recommandée</p>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2025 KSTP Premium. Tous droits réservés. | Développé par W2K Digital</p>
+            <p>&copy; 2025 KSTP PREMIUM. Tous droits réservés.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Site créé par <a href="https://w2k-digital.com" style="color: var(--gold);">W2K-DIGITAL</a></p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33743688399" target="_blank" class="whatsapp-float" title="Contactez-nous sur WhatsApp">
+        💬
+    </a>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+✅ Copié ? Maintenant on passe aux fichiers CSS et JS !RéessayerClaude peut faire des erreurs. Assurez-vous de vérifier ses réponses. Sonnet 4.5
