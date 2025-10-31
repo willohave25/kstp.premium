@@ -249,3 +249,82 @@ skipLink.addEventListener('blur', () => {
     skipLink.style.top = '-40px';
 });
 document.body.insertBefore(skipLink, document.body.firstChild);
+// ========================================
+// TESTIMONIALS CAROUSEL
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.testimonial-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // Vérifier que les éléments existent
+    if (!track || cards.length === 0) return;
+    
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    
+    // Fonction pour mettre à jour le carousel
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+        
+        // Mettre à jour les indicateurs
+        indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+    
+    // Bouton suivant
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % totalCards;
+            updateCarousel();
+        });
+    }
+    
+    // Bouton précédent
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+            updateCarousel();
+        });
+    }
+    
+    // Indicateurs cliquables
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+    
+    // Auto-play (optionnel - défilement automatique toutes les 5 secondes)
+    let autoplayInterval = setInterval(function() {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateCarousel();
+    }, 5000);
+    
+    // Pause auto-play au survol
+    if (track) {
+        track.addEventListener('mouseenter', function() {
+            clearInterval(autoplayInterval);
+        });
+        
+        track.addEventListener('mouseleave', function() {
+            autoplayInterval = setInterval(function() {
+                currentIndex = (currentIndex + 1) % totalCards;
+                updateCarousel();
+            }, 5000);
+        });
+    }
+    
+    // Initialiser le carousel
+    updateCarousel();
+});
