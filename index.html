@@ -3,158 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KSTP PREMIUM - Service de chauffeur privé VTC premium à Reims. Transport professionnel avec véhicules haut de gamme.">
-    <title>KSTP PREMIUM | Chauffeur Privé VTC Toute Distance - Reims</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="KSTP Premium - Service VTC de luxe à Reims. Transferts aéroport, événements, circuits vignobles avec chauffeur privé.">
+    <title>KSTP Premium - VTC de Luxe à Reims | Chauffeur Privé</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">KSTP PREMIUM</a>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-            <ul class="nav-links" id="navLinks">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="KSTP Premium Logo">
+            </a>
+            <button id="menuToggle" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu" class="nav-menu">
                 <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="vehicules.html">Véhicules</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="vehicules.html">Nos Véhicules</a></li>
-                <li><a href="vignobles.html">Vignobles</a></li>
-                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="circuits.html">Circuits Vignobles</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+33123456789" class="btn-reserve">Réserver</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Excellence & Élégance</h1>
-            <p>Service de chauffeur privé premium pour tous vos déplacements en France et à l'international</p>
-            <div class="cta-buttons">
-                <a href="reservation.html" class="btn btn-primary">Réserver maintenant</a>
-                <a href="https://wa.me/33743688399" target="_blank" class="btn btn-secondary">WhatsApp</a>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-subtitle">Chauffeur Privé Premium</span>
+            <h1>Excellence & Distinction</h1>
+            <p>Vivez une expérience de transport d'exception à Reims et dans toute la région Grand Est</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">Réserver maintenant</a>
+                <a href="vehicules.html" class="btn btn-secondary">Découvrir nos véhicules</a>
             </div>
         </div>
     </section>
 
-    <!-- About Preview -->
-    <section>
-        <h2 class="section-title">KSTP PREMIUM</h2>
-        <p class="section-subtitle">Votre partenaire privilégié pour un transport d'exception</p>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Qui sommes-nous ?</h3>
-                <p>KSTP PREMIUM est votre service de chauffeur privé haut de gamme pour tous vos déplacements en France et à l'international. Nous allions confort, élégance et professionnalisme pour une expérience de voyage d'exception.</p>
-                <p>Nos chauffeurs agréés sont de véritables experts locaux qui s'adaptent à vos besoins. Sécurité, discrétion et ponctualité sont nos maîtres-mots.</p>
-                <p>Notre politique tarifaire transparente garantit l'absence de frais cachés. Que ce soit pour des transferts aéroport, des déplacements professionnels ou des événements privés, KSTP PREMIUM vous offre un service premium avec des véhicules soigneusement sélectionnés.</p>
-                <a href="services.html" class="btn btn-primary" style="margin-top: 1rem;">Découvrir nos services</a>
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Nos Services</span>
+                <h2>Une prestation sur-mesure</h2>
+                <p>Du transfert aéroport aux événements privés, nous assurons vos déplacements avec élégance et ponctualité</p>
             </div>
-            <div class="about-text">
-                <h3>Nos Valeurs</h3>
-                <div class="values-grid">
-                    <div class="value-item">
-                        <div class="service-icon">🛡️</div>
-                        <h4>Sécurité</h4>
-                        <p>Votre sécurité est notre priorité absolue</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-departure"></i>
                     </div>
-                    <div class="value-item">
-                        <div class="service-icon">⏱️</div>
-                        <h4>Ponctualité</h4>
-                        <p>À l'heure, à chaque fois</p>
+                    <h3>Transferts Aéroport</h3>
+                    <p>Charles de Gaulle, Orly, Beauvais - Transferts fiables avec suivi de vol en temps réel</p>
+                    <a href="services.html" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="value-item">
-                        <div class="service-icon">🤝</div>
-                        <h4>Discrétion</h4>
-                        <p>Confidentialité garantie</p>
+                    <h3>Déplacements Professionnels</h3>
+                    <p>Meetings, séminaires, roadshows - Discrétion et ponctualité garanties</p>
+                    <a href="services.html" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-champagne-glasses"></i>
                     </div>
-                    <div class="value-item">
-                        <div class="service-icon">💎</div>
-                        <h4>Excellence</h4>
-                        <p>Service premium irréprochable</p>
+                    <h3>Événements Privés</h3>
+                    <p>Mariages, anniversaires, soirées - Un moment inoubliable en toute sérénité</p>
+                    <a href="services.html" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wine-glass"></i>
+                    </div>
+                    <h3>Circuits Vignobles</h3>
+                    <p>Découverte des champagnes et vignobles avec chauffeur expert de la région</p>
+                    <a href="circuits.html" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <span class="section-subtitle">Pourquoi KSTP Premium</span>
+                    <h2>L'excellence au service de vos déplacements</h2>
+                    <p>Depuis notre création, nous plaçons la satisfaction client au cœur de nos priorités. Chaque trajet est une expérience unique, pensée pour votre confort et votre sérénité.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fiabilité & Ponctualité</h4>
+                                <p>Nos chauffeurs sont toujours à l'heure, garantissant votre tranquillité d'esprit</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-car-side"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Flotte Premium</h4>
+                                <p>Véhicules haut de gamme régulièrement entretenus pour votre confort optimal</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Chauffeurs Professionnels</h4>
+                                <p>Discrets, courtois et parfaitement formés aux standards du luxe</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Disponibilité 24/7</h4>
+                                <p>Service disponible jour et nuit, 7 jours sur 7, pour tous vos besoins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-us-image">
+                    <img src="assets/images/mercedes.png" alt="Mercedes Classe S - KSTP Premium">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Preview -->
+    <section class="fleet-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Notre Flotte</span>
+                <h2>Des véhicules d'exception</h2>
+                <p>Choisissez le véhicule parfait pour votre occasion</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <img src="assets/images/mercedes.png" alt="Mercedes Classe S">
+                        <div class="fleet-badge">Premium</div>
+                    </div>
+                    <div class="fleet-info">
+                        <h3>Mercedes Classe S</h3>
+                        <p>La référence en matière de berline de prestige</p>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 3 passagers</span>
+                            <span><i class="fas fa-suitcase"></i> 3 bagages</span>
+                        </div>
+                        <a href="vehicules.html" class="btn btn-outline">Découvrir</a>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <img src="assets/images/van.png" alt="Mercedes Vito">
+                        <div class="fleet-badge">Groupe</div>
+                    </div>
+                    <div class="fleet-info">
+                        <h3>Mercedes Vito</h3>
+                        <p>Idéal pour les groupes et familles</p>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 7 passagers</span>
+                            <span><i class="fas fa-suitcase"></i> 8 bagages</span>
+                        </div>
+                        <a href="vehicules.html" class="btn btn-outline">Découvrir</a>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <img src="assets/images/tuckson.png" alt="Hyundai Tucson">
+                        <div class="fleet-badge">Confort</div>
+                    </div>
+                    <div class="fleet-info">
+                        <h3>Hyundai Tucson</h3>
+                        <p>SUV spacieux et élégant</p>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 4 passagers</span>
+                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                        </div>
+                        <a href="vehicules.html" class="btn btn-outline">Découvrir</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section style="background: var(--light-gray);">
-        <h2 class="section-title">Nos Services</h2>
-        <p class="section-subtitle">Des prestations sur-mesure pour tous vos besoins</p>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🚗</div>
-                <h3>Service VTC</h3>
-                <p>Transferts professionnels vers gares, aéroports et destinations de votre choix. Disponibilité 24/7 avec suivi en temps réel.</p>
-                <a href="services.html" class="btn btn-primary">En savoir plus</a>
+    <!-- Champagne Circuit Highlight -->
+    <section class="champagne-highlight">
+        <div class="container">
+            <div class="champagne-content">
+                <div class="champagne-text">
+                    <span class="section-subtitle">Spécialité Champenoise</span>
+                    <h2>Découvrez les Routes du Champagne</h2>
+                    <p>Explorez les plus prestigieuses maisons de Champagne avec notre service exclusif. Nos chauffeurs, fins connaisseurs de la région, vous guideront à travers les vignobles emblématiques de Reims, Épernay et Aÿ-Champagne.</p>
+                    <ul class="champagne-features">
+                        <li><i class="fas fa-check"></i> Circuits personnalisés sur mesure</li>
+                        <li><i class="fas fa-check"></i> Visites dans les grandes maisons de Champagne</li>
+                        <li><i class="fas fa-check"></i> Dégustations commentées</li>
+                        <li><i class="fas fa-check"></i> Déjeuners gastronomiques inclus</li>
+                    </ul>
+                    <a href="circuits.html" class="btn btn-primary">Découvrir nos circuits</a>
+                </div>
+                <div class="champagne-image">
+                    <img src="assets/images/mercedes.png" alt="Circuit Champagne">
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="service-card">
-                <div class="service-icon">💼</div>
-                <h3>Service Entreprise</h3>
-                <p>Solutions de transport dédiées aux professionnels. Déplacements d'affaires, séminaires, événements corporate avec discrétion garantie.</p>
-                <a href="services.html" class="btn btn-primary">En savoir plus</a>
+    <!-- Avis Clients -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Avis de nos clients</span>
+                <h2>Ils nous font confiance</h2>
             </div>
+            <div class="reviews-summary">
+                <div class="rating-badge">
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="rating-score">4.9/5</div>
+                    <div class="rating-count">127 avis Google</div>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Service exceptionnel ! Chauffeur professionnel, véhicule impeccable. Ponctualité parfaite et discrétion absolue. Je recommande vivement !"</p>
+                    <div class="review-author">
+                        <div class="author-initial">JD</div>
+                        <div class="author-details">
+                            <div class="author-name">Jean Dupont</div>
+                            <div class="author-date">Il y a 2 semaines</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Circuit vignobles champenois parfait. Chauffeur connaissait la région, excellents conseils. Véhicule luxueux et confortable."</p>
+                    <div class="review-author">
+                        <div class="author-initial">ML</div>
+                        <div class="author-details">
+                            <div class="author-name">Marie Laurent</div>
+                            <div class="author-date">Il y a 1 mois</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Transfert aéroport CDG impeccable. Réservation facile, prix transparent, chauffeur à l'heure. Service premium qui tient ses promesses !"</p>
+                    <div class="review-author">
+                        <div class="author-initial">PM</div>
+                        <div class="author-details">
+                            <div class="author-name">Pierre Martin</div>
+                            <div class="author-date">Il y a 3 semaines</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Parfait pour événements entreprise ! Toujours à la hauteur pour nos clients VIP. Véhicules luxueux et chauffeurs irréprochables."</p>
+                    <div class="review-author">
+                        <div class="author-initial">SC</div>
+                        <div class="author-details">
+                            <div class="author-name">Sophie Chevalier</div>
+                            <div class="author-date">Il y a 1 semaine</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Service 5 étoiles pour mon mariage ! Van magnifique, chauffeur d'une gentillesse exceptionnelle. Journée parfaite grâce à KSTP Premium !"</p>
+                    <div class="review-author">
+                        <div class="author-initial">AL</div>
+                        <div class="author-details">
+                            <div class="author-name">Amélie Leblanc</div>
+                            <div class="author-date">Il y a 2 mois</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="service-card">
-                <div class="service-icon">🍾</div>
-                <h3>Circuit Vignoble Champagne</h3>
-                <p>Découvrez les trésors viticoles de la Marne avec nos circuits personnalisés. Visites de caves et dégustations dans le confort premium.</p>
-                <a href="vignobles.html" class="btn btn-primary">En savoir plus</a>
+    <!-- Testimonials Carousel -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Témoignages</span>
+                <h2>Paroles de clients</h2>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "Un service irréprochable du début à la fin. Le chauffeur était ponctuel, courtois et la Mercedes Classe S était impeccable. Pour mes déplacements professionnels à Reims, je ne fais plus appel qu'à KSTP Premium. Un niveau de service digne des plus grands."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-initial">M</div>
+                            <div class="author-info">
+                                <h4>Marc Dubois</h4>
+                                <p>Directeur Commercial - Paris</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "Nous avons organisé notre mariage avec KSTP Premium et ce fut parfait ! Le van était magnifiquement préparé, le chauffeur d'une discrétion exemplaire. Tous nos invités ont été impressionnés. Merci pour avoir rendu notre journée encore plus magique !"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-initial">S</div>
+                            <div class="author-info">
+                                <h4>Sophie & Thomas</h4>
+                                <p>Mariés le 15 juin 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "Le circuit champagne était exceptionnel ! Notre chauffeur connaissait parfaitement la région et nous a fait découvrir des caves confidentielles. Une expérience authentique et luxueuse. Je recommande vivement pour découvrir la Champagne autrement."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-initial">J</div>
+                            <div class="author-info">
+                                <h4>Julie Martin</h4>
+                                <p>Amatrice de champagne - Lyon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev">←</button>
+                    <button class="carousel-btn next">→</button>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à vivre l'expérience KSTP Premium ?</h2>
+                <p>Réservez dès maintenant votre chauffeur privé et voyagez en toute sérénité</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+                    <a href="tel:+33123456789" class="btn btn-secondary"><i class="fas fa-phone"></i> +33 1 23 45 67 89</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>KSTP PREMIUM</h3>
-                <p>Service de chauffeur privé premium</p>
-                <p>SASU - SIREN: 939 571 147</p>
-                <p>RCS Reims</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="assets/images/logo.png" alt="KSTP Premium" class="footer-logo">
+                    <p>Votre partenaire de confiance pour tous vos déplacements premium à Reims et dans la région Grand Est.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="vehicules.html">Véhicules</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="circuits.html">Circuits Vignobles</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Nos Services</h4>
+                    <ul>
+                        <li><a href="services.html">Transferts Aéroport</a></li>
+                        <li><a href="services.html">Déplacements Pro</a></li>
+                        <li><a href="services.html">Événements Privés</a></li>
+                        <li><a href="circuits.html">Circuits Champagne</a></li>
+                        <li><a href="services.html">Mise à disposition</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i> contact@kstp-premium.fr</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Reims, France</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="footer-section">
-                <h3>Navigation</h3>
-                <a href="index.html">Accueil</a>
-                <a href="services.html">Services</a>
-                <a href="vehicules.html">Nos Véhicules</a>
-                <a href="vignobles.html">Vignobles</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 KSTP PREMIUM. Tous droits réservés.</p>
+                    <p>SIREN: 939 571 147</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="mentions-legales.html#cgv">CGV</a>
+                    <a href="mentions-legales.html#confidentialite">Confidentialité</a>
+                </div>
+                <div class="footer-credits">
+                    <p>Site créé par <a href="https://w2k-digital.com" target="_blank">W2K-DIGITAL</a></p>
+                </div>
             </div>
-
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>📞 Fixe: 03 39 92 20 14</p>
-                <p>📱 Mobile: 07 43 68 83 99</p>
-                <p>✉️ contact@kstp-premium.com</p>
-                <p>📍 12 Rue Guillaume Apollinaire<br>51100 Reims, France</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Horaires</h3>
-                <p>Service disponible 24h/24</p>
-                <p>7 jours sur 7</p>
-                <p>Réservation recommandée</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 KSTP PREMIUM. Tous droits réservés.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Site créé par <a href="https://w2k-digital.com" style="color: var(--gold);">W2K-DIGITAL</a></p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/33743688399" target="_blank" class="whatsapp-float" title="Contactez-nous sur WhatsApp">
-        💬
-    </a>
-
-    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
