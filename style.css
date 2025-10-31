@@ -4,6 +4,11 @@
     --white: #FFFFFF;
     --gray: #1a1a1a;
     --light-gray: #f5f5f5;
+    --gray-dark: #333333;
+    --gray-medium: #666666;
+    --gray-light: #999999;
+    --gray-lightest: #F8F8F8;
+    --gold-light: #D4B76E;
 }
 
 * {
